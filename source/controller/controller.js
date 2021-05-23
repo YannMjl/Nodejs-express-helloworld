@@ -4,10 +4,17 @@
 // create an HTML page displaying the data, and return it to the 
 // user to view in the browser.
 // ****************************************************************
+import path from 'path';
+const __dirname = path.resolve();
 
 export const home = (req, res) => {
     var welcome_message = `Hello World! this is a node JS demo app`;
     res.send(welcome_message);
+}
+// show html page
+export const homePage = (req, res) => {
+    //show this file when the "/" is requested
+    res.sendFile(__dirname+"/pages/home.html");
 }
 // get today's date
 export const getTodayDate = (req, res) => {
