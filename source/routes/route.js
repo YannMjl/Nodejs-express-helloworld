@@ -7,6 +7,7 @@
 // import my GET API from the controller functions
 import { 
     home,
+    homePage,
     getTodayDate,
     getMonthsName,
     getItotDevs 
@@ -14,6 +15,10 @@ import {
 
 // set up the routing
 const routes = (app) => {
+    // home page
+    app.route('/')
+        .get(homePage)
+        
     // GET home page.
     app.route('/home')
         .get(home)
