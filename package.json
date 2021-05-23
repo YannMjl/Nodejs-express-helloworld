@@ -1,12 +1,21 @@
 {
   "name": "express-helloworld",
   "version": "1.0.0",
+  "author": "Yann Mulonda",
   "description": "A simple hello world Express/NodeJS application",
+  "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Hello World!""
+    "start": "babel-node ./app.js",
+    "test": "jest",
+    "build": "echo Test build succeed! No Package uploaded!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannMjl/Nodejs-express-helloworld"
+  },
+  "bugs": {
+    "url": "https://github.com/YannMjl/Nodejs-express-helloworld/issues"
   },
   "keywords": [
     "node",
@@ -17,5 +26,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset": "^1.1.7",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.6.3"
   }
 }

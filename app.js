@@ -1,19 +1,29 @@
-var express = require('express');
-app = express();
+// import Express libraries and routes
+import express from 'express';
+import routes from './source/routes/route.js';
 
-app.get('/', function (req, res) {
-  res.send('Hello World!\n');
+// var express = require('express');
+
+// constant variables 
+const app = express();
+const PORT = 3000;
+
+// body parser setup for Express v4.16.0 and higher
+app.use(express.json());
+app.use(express.urlencoded(
+	{
+  		extended: true
+	}
+));
+
+// use our routes function and then pass app, which is the Express library
+routes(app);
+
+app.get('/', (request, response) =>
+  response.send(`NodeJS express server is running on port ${PORT}`)
+);
+
+// Setting the server to listen at port 3000
+app.listen(PORT, function () {
+  console.log(`Node JS express server is running on port http://localhost:${PORT}`);
 });
-
-app.get('/mars', function (req, res) {
-  res.send('Hello from Mars!\n');
-});
-
-app.get('/mn', function (req, res) {
-  res.send('Hello from Minnesota!\n');
-});
-
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
-});
-
