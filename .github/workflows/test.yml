@@ -65,7 +65,5 @@ jobs:
           image: test-image:latest
           run: |
             echo "Testing the nodejs  app endpoints"
-            curl docker:49160/home
-            curl docker:49160/today
-            curl docker:49160/months
-            curl docker:49160/devs 
+            curl 0.0.0.0:49160/home
+      
