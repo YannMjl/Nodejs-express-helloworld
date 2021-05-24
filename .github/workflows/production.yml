@@ -38,7 +38,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./
+          file: ./Dockerfile
           push: true
-          tags: hr-app:latest
-          
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/hr-app:latest
