@@ -64,7 +64,6 @@ jobs:
         with:
           image: test-image:latest
           run: |
+            echo "runing the docker image"
             echo "Testing the nodejs  app endpoints"
-            docker run -it -d -p 49160:3000 test-image:latest
-            docker ps
       
