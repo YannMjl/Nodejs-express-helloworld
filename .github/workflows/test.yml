@@ -63,6 +63,8 @@ jobs:
       - uses: addnab/docker-run-action@v3
         with:
           image: test-image:latest
+          ports:
+            49160:3000
           run: |
             echo "Testing the nodejs  app endpoints"
             curl 0.0.0.0:49160/home
