@@ -8,6 +8,7 @@ on:
   # push:
   #   branches: [ master ]
   pull_request:
+    types: [closed]
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -18,6 +19,8 @@ jobs:
   # deploy the dockeer container
   deploy:
     runs-on: ubuntu-latest
+    # run the steps only if pull request is approved
+    if: github.event.pull_request.merged == true
 
     steps:
       - name: Checkout
